@@ -1,7 +1,5 @@
 cask_args appdir: '/Applications'
 
-brew 'android-ndk'
-brew 'android-sdk'
 brew 'ccache'
 brew 'coreutils'
 brew 'ffmpeg'
@@ -24,3 +22,6 @@ brew 'webp'
 brew 'wget'
 brew 'zsh'
 brew 'zsh-syntax-highlighting'
+
+brew cask 'android-ndk'
+brew cask 'android-sdk'
