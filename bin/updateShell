@@ -1,0 +1,45 @@
+#!/bin/bash
+
+function git_dirty {
+    [[ $(git diff --shortstat 2> /dev/null | tail -n1) != "" ]] && echo "*"
+}
+
+function git_untracked {
+    expr `git status --porcelain 2>/dev/null| grep "^??" | wc -l`
+}
+
+function git_clean {
+    if [ git_dirty != * && git_untracked == 0 ]; then
+        echo true
+    else
+        echo false
+    fi
+}
+
+# Update dotfiles
+echo Updating dotfiles:
+pushd $ZSH
+if [ git_clean == true ]; then
+    git pull
+else
+    echo -e "\t" Commit changes in dotfiles first
+fi
+popd
+
+# Update Vundle
+echo Updating Vundle:
+vim +PluginInstall +qall
+echo -e "\t Up to date!"
+
+#Update pip
+echo Updating pip:
+pip freeze --local | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 pip install -U
+
+# Update Brew
+echo Updating Brew:
+brew update
+upgrades=$(brew outdated)
+if [ ${#upgrades} == 0 ]; then
+    exit
+fi
+brew upgrade

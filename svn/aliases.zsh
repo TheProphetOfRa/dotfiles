@@ -1,0 +1,13 @@
+# svn aliases
+alias sl='svn log -v | less'
+alias sc='svn commit'
+alias su='svn update --ignore-externals'
+alias sux='svn update'
+alias sui='svn update --depth=imediates'
+alias ss='svn stat --ignore-externals'
+alias ssx='svn stat'
+alias sa='svn add'
+alias si='svn info'
+alias sr='svn revert -R .'
+alias sd='svn diff'
+alias spee='svn propedit svn:externals .'

@@ -1,0 +1,7 @@
+set guifont=Inconsolata		"Set font
+set antialias			"Turn on antialiasing
+
+:color solarized			
+
+set guioptions-=T		"turns off toolbars
+set guioptions-=R		"turns off scrollbars
