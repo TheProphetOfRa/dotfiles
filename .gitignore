@@ -13,3 +13,5 @@ atom.symlink/packages
 atom.symlink/storage
 atom.symlink/themes
 git/gitconfig.local.symlink
+prompt/async
+prompt/prompt_pure_setup
