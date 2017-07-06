@@ -1,5 +1,5 @@
 export CLICOLOR=true
-export EDITOR="nvim"
+export EDITOR="vim"
 
 fpath=($ZSH/functions $fpath)
 
