@@ -32,18 +32,12 @@ require_clean_work_tree () {
 
 # Update dotfiles
 echo Updating dotfiles:
-
 pushd $ZSH > /dev/null
-
 require_clean_work_tree "update dotfiles"
-
 if [ $? -eq 0 ]; then
     git pull --prune --rebase
 fi
-
 popd > /dev/null
-
-exit
 
 # Update Vundle
 echo Updating Vundle:
