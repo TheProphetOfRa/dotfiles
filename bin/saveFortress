@@ -1,0 +1,7 @@
+#!/bin/bash
+
+pushd /usr/local/Caskroom/dwarf-fortress/0.43.05/df_osx
+git add -A
+git commit -m "Saving fortress"
+git push
+popd
