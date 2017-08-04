@@ -2,6 +2,7 @@ cask_args appdir: '/Applications'
 
 brew 'ccache'
 brew 'coreutils'
+brew 'exa'
 brew 'ffmpeg'
 brew 'git'
 brew 'glew'
