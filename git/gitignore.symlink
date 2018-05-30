@@ -3,6 +3,7 @@
 *.swp
 *.rbc
 tags
+.gitconfig
 
 ##Xcode
 ## Build generated
