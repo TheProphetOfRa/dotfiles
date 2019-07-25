@@ -1,0 +1,18 @@
+#!/bin/bash
+if [[ "$#" -eq 3 ]]; then
+strace -q -ewrite cp -- "${1}" "${2}" 2>&1 \
+  | awk '{
+    cal += $NF
+        if (cal % 10 == 0) {
+           percentage = cal / totalsize * 100
+           printf "%3d%% [", percentage
+           for (i=0;i<=percentage;i++)
+              printf "="
+           printf ">"
+           for (i=percentage;i<100;i++)
+              printf " "
+           printf "]\r"
+        }
+     }
+     END { print "" }' totalsize=$(stat -c '%s' "${1}") cal=0
+fi
