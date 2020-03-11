@@ -1,6 +1,3 @@
 [submodule "prompt/pure"]
 	path = prompt/pure
 	url = https://github.com/sindresorhus/pure.git
-[submodule "flutter/flutter_sdk"]
-	path = flutter/flutter_sdk
-	url = https://github.com/flutter/flutter
