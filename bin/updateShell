@@ -45,16 +45,9 @@ vim +PluginInstall +qall
 echo -e "\t Up to date!"
 
 #Update pip
-current=`pyenv local`
-echo Updating pip2:
-pyenv local 2.7.15
-pip2 install --upgrade pip
-pip2 freeze --local | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 pip2 install -U
-echo Updating pip3:
-pyenv local 3.6.5
-pip3 install --upgrade pip
-pip3 freeze --local | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 pip3 install -U
-pyenv local $current
+echo Updating pip:
+pip install --upgrade pip
+pip freeze --local | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 pip install -U
 
 # Update Brew
 echo Updating Brew:
